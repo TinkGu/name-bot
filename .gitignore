@@ -146,3 +146,5 @@ yarn-error.log
 .swc
 .pnpm-debug.log
 
+# projects
+*/selected/*.json
