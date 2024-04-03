@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const { saveJson } = require('./utils');
 
 let CiDict = null;
 
@@ -31,7 +32,7 @@ function getWordsByChar({ char }) {
 function main({ char, fileName }) {
   loadCiDict();
   const ciList = getWordsByChar({ char });
-  fs.writeFileSync(path.join(__dirname, `../assets/selected/${fileName}.json`), JSON.stringify(ciList, null, 2));
+  saveJson({ data: ciList, filePath: `selected/${fileName}.json` });
 }
 
 main({ char: '黄', fileName: 'huang' });

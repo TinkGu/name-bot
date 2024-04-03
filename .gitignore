@@ -147,4 +147,5 @@ yarn-error.log
 .pnpm-debug.log
 
 # projects
-*/selected/*.json
+assets/selected/*.json
+assets/gushi/*.json
