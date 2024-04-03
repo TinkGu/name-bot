@@ -17,9 +17,10 @@ function getWordsByChar({ char }) {
   if (!char) return;
   let res = [];
   for (let item of CiDict) {
-    if (!item) continue ;
+    if (!item) continue;
     if (item.ci.includes(char)) {
-      if (item.ci.length <= 4) { // 大于 4 字，不录
+      if (item.ci.length <= 4) {
+        // 大于 4 字，不录
         res.push(item);
       }
     }
@@ -30,8 +31,7 @@ function getWordsByChar({ char }) {
 function main({ char, fileName }) {
   loadCiDict();
   const ciList = getWordsByChar({ char });
-  fs.writeFileSync(path.join(__dirname, `../assets/selected/${fileName}.json`), JSON.stringify(ciList, null, 2))
+  fs.writeFileSync(path.join(__dirname, `../assets/selected/${fileName}.json`), JSON.stringify(ciList, null, 2));
 }
 
 main({ char: '黄', fileName: 'huang' });
-
